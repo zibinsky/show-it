@@ -1,0 +1,578 @@
+@import 'fonts';
+@import 'vars';
+@import 'mixins';
+@import 'main';
+
+
+// HEADER ==================================== //
+// =========================================== //
+
+.arrow-right {
+   cursor: pointer;
+}
+
+.header {
+   width: 100%;
+   height: 100vh;
+   background-image: url("../images/bg-main.jpg");
+   background-position: center top;
+   background-repeat: no-repeat;
+   background-size: cover;
+   position: relative;
+}
+
+.button-up {
+   width: 60px;
+   height: 60px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   position: fixed;
+   right: 50px;
+   bottom: 50px;
+   border-radius: 50%;
+   background-color: $green;
+
+   a {
+      display: inline-block;
+      padding: 15px;
+
+      img {
+         transform: rotate(-90deg);
+      }
+   }
+}
+
+.logo {
+   position: absolute;
+   top: 40px;
+   left: 50px;
+   font-size: 2rem;
+   line-height: 1;
+   color: $white;
+}
+
+.burger-menu {
+   position: fixed;
+   top: 50px;
+   right: 50px;
+   width: 40px;
+   height: 20px;
+   cursor: pointer;
+   z-index: 10;
+}
+
+.one {
+   position: absolute;
+   width: 100%;
+   height: 2px;
+   background-color: $white;
+   border: 1px solid $green;
+}
+
+.two {
+   position: absolute;
+   width: 100%;
+   height: 2px;
+   margin-top: 12px;
+   background-color: $white;
+   border: 1px solid $green;
+}
+
+.header-menu {
+   height: 100vh;
+   width: 50%;
+   position: fixed;
+   top: -100%;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   background: $black;
+   z-index: 1;
+
+   &__data {
+      text-align: left;
+
+      // .header-menu__list
+      .header-menu__list {}
+   }
+}
+
+// .header-top__list_item
+
+.header-top__list_item {
+   font-size: 3vmax;
+   text-transform: capitalize;
+   color: $white;
+
+   // .header-top__list_link
+
+   .header-top__list_link {
+      display: inline-block;
+      // margin-bottom: 30px;
+      width: 100%;
+      color: $white;
+      transition: all .3s;
+      border-bottom: 1px solid transparent;
+   }
+
+   .header-top__list_link:hover {
+      color: $green;
+      border-bottom: 1px solid $green;
+   }
+}
+
+.header-descr {
+   position: absolute;
+   top: 70%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   color: $white;
+
+   // .header-descr__title
+
+   &__title {
+      font-size: 6vmax;
+      color: $white;
+      font-weight: 600;
+
+      span {
+         color: $green;
+      }
+   }
+
+   img {
+      margin-bottom: 20px;
+      padding: 15px;
+      border-radius: 50%;
+      background-color: $green;
+      transform: rotate(90deg);
+   }
+
+   a.link {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transition: all .3s;
+   }
+
+   a:hover {
+      color: $green;
+   }
+}
+
+
+// MAIN ====================================== //
+// =========================================== //
+
+.main {}
+
+// ABOUT US SECTION ============= //
+
+.aboutUs {
+   width: 100%;
+   height: 100vh;
+}
+
+.container {}
+
+.aboutUs-top {
+   width: 100%;
+   height: 45vh;
+   justify-content: space-evenly;
+   align-items: center;
+}
+
+.card {
+
+   &__sm {
+      @include card__sm;
+   }
+
+   &__lg {
+      @include card__lg;
+   }
+}
+
+.aboutUs-bottom {
+   width: 100%;
+   height: 55vh;
+   align-items: center;
+   background-color: $whitesmoke;
+}
+
+
+// OUR SKILLS SECTION ============= //
+
+.ourSkills {
+   width: 100%;
+   height: 100vh;
+}
+
+.ourSkills-top {
+   width: 100%;
+   height: 50vh;
+   background-image: url("../images/bg-1.jpeg");
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+
+   &__cover {
+      width: 100%;
+      height: 100%;
+      padding: 0 20px;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(0, 0, 0, .85);
+
+      .container-cover {
+         width: 100%;
+         max-width: 1600px;
+         height: 100%;
+         margin: 0 auto;
+         display: flex !important;
+         flex-direction: row !important;
+         justify-content: center;
+         align-items: center;
+
+         .card__lg {
+            @include card__lg_reverse;
+
+            &_descr_title,
+            &_descr_info {
+               color: $white !important;
+            }
+         }
+      }
+   }
+}
+
+.ourSkills-bottom {
+   width: 100%;
+   height: 50vh;
+
+   // .ourSkills-bottom__skills
+
+   &__skills {
+      width: 50%;
+      height: 100%;
+
+      // .ourSkills-bottom__skills_content
+
+      &_content {
+         width: 100%;
+         height: 100%;
+         margin-left: 5vw;
+
+         &_item {
+            width: 100%;
+            max-width: 600px;
+            height: 5vh;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+
+            &:last-child {
+               margin-bottom: 0;
+            }
+
+            .ourSkills-bottom__skills_content_progress {
+               width: 80%;
+               display: flex;
+               flex-direction: column;
+               justify-content: space-between;
+
+               .content_progress_title {
+                  margin-bottom: 7px;
+                  font-size: 1rem;
+                  font-weight: 600;
+               }
+
+               .content_progress_progressbar {
+                  width: 100%;
+                  height: 1.5vh;
+                  background-color: $light-green;
+                  position: relative;
+               }
+
+               .cpp-1::after {
+                  content: "";
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  width: 78%;
+                  height: 100%;
+                  background-color: $green;
+               }
+
+               .cpp-2::after {
+                  content: "";
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  width: 61%;
+                  height: 100%;
+                  background-color: $green;
+               }
+
+               .cpp-3::after {
+                  content: "";
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  width: 72%;
+                  height: 100%;
+                  background-color: $green;
+               }
+
+               .cpp-4::after {
+                  content: "";
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  width: 89%;
+                  height: 100%;
+                  background-color: $green;
+               }
+            }
+
+            .ourSkills-bottom__skills_content_number {
+               width: 12%;
+               margin-left: 10px;
+               display: flex;
+               justify-content: space-between;
+               font-size: 2.3rem;
+
+               span {
+                  font-size: 1.2rem;
+                  font-weight: 600;
+               }
+            }
+         }
+      }
+   }
+
+   &__image {
+      width: 50%;
+      height: 100%;
+   }
+}
+
+// PORTFOLIO SECTION ============= //
+
+
+.portfolio {
+   width: 100%;
+   height: 100vh;
+
+   &-title {
+      width: 100%;
+      height: 100px !important;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background-color: $whitesmoke;
+
+      h2 {
+         font-weight: 700;
+      }
+   }
+
+   &-grid {
+      width: 100%;
+      height: calc(100vh - 100px);
+      display: flex;
+      flex-wrap: wrap !important;
+
+      .portfolio-item {
+         width: 33.333%;
+         height: 50%;
+
+         img {
+            width: 100%;
+            height: 100%;
+         }
+      }
+   }
+}
+
+
+// SERVICES SECTION ============= //
+
+
+.services {
+   width: 100%;
+   height: 100vh;
+}
+
+.services-title {
+   width: 100%;
+   height: 100px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-size: 32px;
+   line-height: 38px;
+   font-weight: 700;
+   background-color: whitesmoke;
+}
+
+.services-top,
+.services-bottom {
+   width: 100%;
+   height: 40%;
+   margin: 100px 0;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+
+// FOOTER ==================================== //
+// =========================================== //
+
+
+.footer {
+   width: 100%;
+   height: 100vh;
+   background-image: url("../images/bg-main.jpg");
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+   color: white;
+
+   &-cover {
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, .8);
+   }
+}
+
+.footer-top {
+   width: 100%;
+   height: 60%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+
+
+   // .footer-top__descr
+
+   &__descr {
+      width: 50%;
+      // .footer-top__descr_title
+
+      &_title {
+         font-size: 2rem;
+         margin-bottom: 5vh;
+      }
+
+      // .footer-top__descr_info
+
+      &_info {
+         font-size: 0.9rem;
+         line-height: 2.5vh;
+         text-align: left;
+      }
+
+      &_subtitle {
+         margin-top: 100px;
+         font-size: 1.3rem;
+         text-align: right;
+         font-style: italic;
+         position: relative;
+
+         img {
+            position: absolute;
+            top: 50px;
+            right: 0px;
+         }
+      }
+   }
+}
+
+.footer-divider {
+   width: 100%;
+   height: 10%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background-color: $green;
+   // .footer-divider__info
+
+   &__info {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+
+      p {
+         margin: 0 0 0 20px
+      }
+   }
+}
+
+.footer-bottom {
+   width: 100%;
+   height: 30%;
+
+
+   .container {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+   }
+
+   // .footer-bottom__address
+
+   &__address {
+      display: flex;
+      // .footer-bottom__address_email
+
+      &_email {
+         margin-right: 50px;
+      }
+
+      // .footer-bottom__address_address
+
+      &_address {}
+   }
+
+   // .footer-bottom__icons
+
+   &__icons {
+      a {
+         margin: 0 25px;
+         transition: all .3s;
+      }
+
+      a:last-child {
+         margin: 0 0 0 25px;
+      }
+
+      a:hover {
+         color: $green;
+      }
+   }
+}
+
+
+
+
+
+// CONTENT STYLES END ======================== //
+// =========================================== //
+
+@import 'media';
